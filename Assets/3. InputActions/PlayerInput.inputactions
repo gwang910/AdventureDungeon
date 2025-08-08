@@ -49,6 +49,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "Interaction",
+                    "type": "Button",
+                    "id": "b436d678-5261-4648-adc4-7d65dff0ec79",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -77,7 +86,7 @@
                 {
                     "name": "down",
                     "id": "dfda041f-63be-4be6-94cc-57d703dde576",
-                    "path": "<Keyboard>/a",
+                    "path": "<Keyboard>/s",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -88,7 +97,7 @@
                 {
                     "name": "left",
                     "id": "07b9b11f-5e01-414c-9126-16b659944507",
-                    "path": "<Keyboard>/s",
+                    "path": "<Keyboard>/a",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -148,6 +157,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Look",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f8862590-a0b7-40a5-8a9a-6c2b44861588",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Interaction",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
