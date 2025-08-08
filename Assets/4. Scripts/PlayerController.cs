@@ -24,7 +24,7 @@ public class PlayerController : MonoBehaviour
     [HideInInspector]
     public bool canLook = true;
 
-    private Rigidbody rigidbody;
+    private new Rigidbody rigidbody;
 
     private void Awake()
     {
