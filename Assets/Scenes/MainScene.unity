@@ -1110,8 +1110,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1998752796}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1837,6 +1837,7 @@ GameObject:
   - component: {fileID: 2041392956}
   - component: {fileID: 2041392957}
   - component: {fileID: 2041392958}
+  - component: {fileID: 2041392959}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -1946,6 +1947,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 2041392956}
+  condition: {fileID: 0}
 --- !u!114 &2041392958
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2036,6 +2038,20 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &2041392959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2041392949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 992d6954f5a97e4409b2b513ce83c24b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uiCondition: {fileID: 0}
+  noHungerHealthDecay: 0
 --- !u!1 &2135982992
 GameObject:
   m_ObjectHideFlags: 0
