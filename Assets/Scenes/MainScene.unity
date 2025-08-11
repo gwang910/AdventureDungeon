@@ -2373,6 +2373,7 @@ GameObject:
   - component: {fileID: 2041392957}
   - component: {fileID: 2041392958}
   - component: {fileID: 2041392959}
+  - component: {fileID: 2041392960}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -2483,6 +2484,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 2041392956}
   condition: {fileID: 2041392959}
+  itemData: {fileID: 0}
 --- !u!114 &2041392958
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2565,7 +2567,19 @@ MonoBehaviour:
     m_ActionId: 21a674e9-7d15-47e4-9e64-6241832f20b2
     m_ActionName: Player/Look[/Mouse/delta]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2041392960}
+        m_TargetAssemblyTypeName: Interaction, Assembly-CSharp
+        m_MethodName: OnInteractInput
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: b436d678-5261-4648-adc4-7d65dff0ec79
     m_ActionName: Player/Interaction[/Keyboard/e]
   m_NeverAutoSwitchControlSchemes: 0
@@ -2587,6 +2601,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uiCondition: {fileID: 200765708}
   noHungerHealthDecay: 2
+--- !u!114 &2041392960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2041392949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9769fbf59b6e8a64e98117876b0a926c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  checkRate: 0.05
+  maxCheckDistance: 3
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 128
+  curInteractGameObject: {fileID: 0}
+  promptText: {fileID: 0}
 --- !u!1 &2135982992
 GameObject:
   m_ObjectHideFlags: 0
