@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6490404210576293373}
-  - component: {fileID: 3622139918120366914}
   - component: {fileID: 4967106800198344356}
+  - component: {fileID: 3622139918120366914}
   - component: {fileID: 8215149828995053471}
   m_Layer: 7
   m_Name: Item_Axe
@@ -35,6 +35,27 @@ Transform:
   - {fileID: 4747966704144758269}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &4967106800198344356
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8859863460076593005}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.09225687, y: 0.7150279, z: 0.070574835}
+  m_Center: {x: 0.029514413, y: 0.15934825, z: 0.0012492985}
 --- !u!54 &3622139918120366914
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -62,27 +83,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &4967106800198344356
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8859863460076593005}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.09225687, y: 0.7150279, z: 0.070574835}
-  m_Center: {x: 0.029514413, y: 0.15934825, z: 0.0012492985}
 --- !u!114 &8215149828995053471
 MonoBehaviour:
   m_ObjectHideFlags: 0
