@@ -24,6 +24,8 @@ public class PlayerController : MonoBehaviour
     [HideInInspector]
     public bool canLook = true;
 
+    public Action inventory;
+
     private new Rigidbody rigidbody;
 
     private void Awake()
@@ -47,6 +49,22 @@ public class PlayerController : MonoBehaviour
         {
             CameraLook();
         }
+    }
+
+    public void OnInventoryButton(InputAction.CallbackContext callbackContext)
+    {
+        if (callbackContext.phase == InputActionPhase.Started)
+        {
+            inventory?.Invoke();
+            ToggleCursor();
+        }
+    }
+
+    void ToggleCursor()
+    {
+        bool toggle = Cursor.lockState == CursorLockMode.Locked;
+        Cursor.lockState = toggle ? CursorLockMode.None : CursorLockMode.Locked;
+        canLook = !toggle;
     }
 
     public void OnLookInput(InputAction.CallbackContext context)
