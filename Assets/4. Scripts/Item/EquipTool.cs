@@ -7,6 +7,7 @@ public class EquipTool : Equip
     public float attackRate;
     private bool attacking;
     public float attackDistance;
+    public float useStamina;
 
     [Header("Resource Gathering")]
     public bool doesGatherResources;
@@ -14,4 +15,5 @@ public class EquipTool : Equip
     [Header("Combat")]
     public bool doesDealDamage;
     public int damage;
+
 }

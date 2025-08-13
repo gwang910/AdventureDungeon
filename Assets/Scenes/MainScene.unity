@@ -1272,7 +1272,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 574996734}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1522895134}
+        m_TargetAssemblyTypeName: UIInventory, Assembly-CSharp
+        m_MethodName: OnDropButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &574996734
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3687,7 +3699,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1201127820}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1522895134}
+        m_TargetAssemblyTypeName: UIInventory, Assembly-CSharp
+        m_MethodName: OnUseButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1201127820
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4484,12 +4508,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slots: []
   inventoryWindow: {fileID: 866695167}
-  slotPanel: {fileID: 0}
+  slotPanel: {fileID: 565556217}
   dropPosition: {fileID: 0}
-  selectedItemName: {fileID: 0}
-  selectedItemDescription: {fileID: 0}
-  selectedItemStatName: {fileID: 0}
-  selectedItemStatValue: {fileID: 0}
+  selectedItemName: {fileID: 1308765715}
+  selectedItemDescription: {fileID: 1814549775}
+  selectedItemStatName: {fileID: 1934649524}
+  selectedItemStatValue: {fileID: 1047763657}
   useButton: {fileID: 1201127817}
   equipButton: {fileID: 1331296032}
   unEquipButton: {fileID: 457885124}
@@ -6549,7 +6573,19 @@ MonoBehaviour:
     m_ActionId: 34b9631a-2579-48df-b33f-b336c390b524
     m_ActionName: Player/Attack[/Mouse/leftButton]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2041392956}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: OnInventoryButton
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 75a77274-7fdb-4bb8-8af3-25a2f461b1ce
     m_ActionName: Player/Inventory[/Keyboard/tab]
   - m_PersistentCalls:

@@ -6,9 +6,11 @@ using UnityEngine.UI;
 
 public class ItemSlot : MonoBehaviour
 {
+    // 데이터
     public ItemData item;
 
-    public UIInventory inventory;
+    // 인벤토리 / 상태
+    [HideInInspector] public UIInventory inventory;
     public Button button;
     public Image icon;
     public TextMeshProUGUI quatityText;
@@ -30,21 +32,43 @@ public class ItemSlot : MonoBehaviour
 
     public void Set()
     {
-        icon.gameObject.SetActive(true);
-        icon.sprite = item.icon;
-        quatityText.text = quantity > 1 ? quantity.ToString() : string.Empty;
+        // 아이템이 없으면 빈칸 처리
+        if (item == null)
+        {
+            Clear();
+            return;
+        }
+
+        if (icon != null)
+        {
+            icon.gameObject.SetActive(true);
+            icon.sprite = item.icon;
+        }
+
+        if (quatityText != null)
+            quatityText.text = (quantity > 1) ? quantity.ToString() : string.Empty;
 
         if (outline != null)
-        {
             outline.enabled = equipped;
-        }
     }
 
     public void Clear()
     {
         item = null;
-        icon.gameObject.SetActive(false);
-        quatityText.text = string.Empty;
+        quantity = 0;
+        equipped = false;
+
+        if (icon != null)
+        {
+            icon.sprite = null;
+            icon.gameObject.SetActive(false); // 빈칸 표시
+        }
+
+        if (quatityText != null)
+            quatityText.text = string.Empty;
+
+        if (outline != null)
+            outline.enabled = false;
     }
 
     public void OnClickButton()

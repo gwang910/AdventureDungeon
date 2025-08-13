@@ -30,6 +30,31 @@ public class UIInventory : MonoBehaviour
     private PlayerController controller;
     private PlayerCondition condition;
 
+    // 자동 할당 & 방어 코드 추가
+    void Awake()
+    {
+        // inventoryWindow가 비었으면 자식에서 찾아보기 (이름은 상황에 맞게 바꾸세요)
+        if (inventoryWindow == null)
+        {
+            var inv = transform.Find("InventoryWindow");
+            if (inv != null) inventoryWindow = inv.gameObject;
+        }
+
+        // slotPanel이 비었으면 자식들에서 ItemSlot을 찾아 부모 Transform을 slotPanel로 사용
+        if (slotPanel == null)
+        {
+            ItemSlot firstSlot = null;
+
+            if (inventoryWindow != null)
+                firstSlot = inventoryWindow.GetComponentInChildren<ItemSlot>(true);
+            if (firstSlot == null)
+                firstSlot = GetComponentInChildren<ItemSlot>(true);
+
+            if (firstSlot != null)
+                slotPanel = firstSlot.transform.parent;
+        }
+    }
+
     void Start()
     {
         controller = CharacterManager.Instance.Player.controller;
@@ -53,19 +78,25 @@ public class UIInventory : MonoBehaviour
         ClearSelectedItemWindow();
     }
 
+    private bool HasSelection()
+    {
+        return selectedItem != null && selectedItem.item != null;
+    }
+
     void ClearSelectedItemWindow()
     {
+        // null참조 방지를 위해 if 활용
         selectedItem = null;
 
-        selectedItemName.text = string.Empty;
-        selectedItemDescription.text = string.Empty;
-        selectedItemStatName.text = string.Empty;
-        selectedItemStatValue.text = string.Empty;
+        if (selectedItemName) selectedItemName.text = string.Empty;
+        if (selectedItemDescription) selectedItemDescription.text = string.Empty;
+        if (selectedItemStatName) selectedItemStatName.text = string.Empty;
+        if (selectedItemStatValue) selectedItemStatValue.text = string.Empty;
 
-        useButton.SetActive(false);
-        equipButton.SetActive(false);
-        unEquipButton.SetActive(false);
-        dropButton.SetActive(false);
+        if (useButton) useButton.SetActive(false);
+        if (equipButton) equipButton.SetActive(false);
+        if (unEquipButton) unEquipButton.SetActive(false);
+        if (dropButton) dropButton.SetActive(false);
     }
 
     public void Toggle()
@@ -167,7 +198,8 @@ public class UIInventory : MonoBehaviour
     // ItemSlot 스크립트 먼저 수정
     public void SelectItem(int index)
     {
-        if (slots[index].item == null) return;
+        if (index < 0 || index >= slots.Length) return;
+        if (slots[index].item == null) { ClearSelectedItemWindow(); return; }
 
         selectedItem = slots[index];
         selectedItemIndex = index;
@@ -192,6 +224,7 @@ public class UIInventory : MonoBehaviour
 
     public void OnUseButton()
     {
+        if (!HasSelection()) return;  // 선택 없으면 바로 종료
         if (selectedItem.item.type == ItemType.Consumable)
         {
             for (int i = 0; i < selectedItem.item.consumables.Length; i++)
@@ -210,12 +243,14 @@ public class UIInventory : MonoBehaviour
 
     public void OnDropButton()
     {
+        if (!HasSelection()) return;  // 선택 없으면 바로 종료
         ThrowItem(selectedItem.item);
         RemoveSelctedItem();
     }
 
     public void OnEquipButton()
     {
+        if (!HasSelection()) return;  // 선택 없으면 바로 종료
         if (slots[curEquipIndex].equipped)
         {
             UnEquip(curEquipIndex);
@@ -261,6 +296,7 @@ public class UIInventory : MonoBehaviour
 
     public void OnUnEquipButton()
     {
+        if (!HasSelection()) return;  // 선택 없으면 바로 종료
         UnEquip(selectedItemIndex);
     }
 
