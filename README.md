@@ -14,7 +14,8 @@
 - 시점 중앙을 오브젝트에 가져다대면, 정보를 볼 수 있습니다.
 
 4. 점프대
-- 구현하지 못했습니다.
+- ![화면 캡처 2025-08-13 154510](https://github.com/user-attachments/assets/9acd92e0-61be-4a4f-a0b2-372dbeb5f82d)
+- 점프대 위에 올라가면, 트램펄린처럼 방방 뛰는 형태로 구현되었습니다.
 
 5. 아이템 데이터
 - ![화면 캡처 2025-08-13 142655](https://github.com/user-attachments/assets/7e444e6e-9fdf-40cc-a5e8-655d829b7ce3)
